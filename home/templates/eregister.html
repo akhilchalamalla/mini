@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        .border {
+          display: inline-block;
+          width: 550px;
+          height: 600px;
+          margin: 6px;
+          border-radius: 20px;
+          background-color:cornsilk;
+        }
+        .span {
+            border-radius: 20px;
+    height: 33px;
+            background-color:lightcyan;
+          }
+        </style>
+<body>
+    {% extends 'base.html' %}
+    {% block content %}
+
+<form action="eregister" method="POST">
+    {% csrf_token %}
+   <center>
+       <br>
+       <span class="border border-dark">
+         <h2>REGISTRATION FORM</h2>
+         <hr>
+         <div class="row">
+             <div class="col-sm-2"></div>
+             <div class="col-sm-3 ">Rollno:</div>
+             <div class="col-sm-3"><input type="text" placeholder="Roll no" name="rollno" class="span"></div>
+         </div>
+        <br>
+         <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-3">Email:</div>
+            <div class="col-sm-3"><input type="email" name="email" placeholder="mail"></div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-3">CGPA  :</div>
+            <div class="col-sm-3"><input type="text" name="cgpa"  placeholder="CGPA"></div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-3">name of event  :</div>
+            <div class="col-sm-3"><input type="text" name="event"  placeholder="event"></div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-4">backlogs:</div>
+            <div class="col-sm-3"><input type="text" name="backlogs" placeholder="backlogs"></div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2"> year<select name="year">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                  </select> </div>
+                  
+            <div class="col-sm-3">Branch <select name="branch">
+                <option value="CSE">CSE</option>
+                <option value="IT">IT</option>
+                <option value="EEE">EEE</option>
+                <option value="ECE">ECE</option>
+              </select></div>
+            <div class="col-sm-3">Section <select name="section">
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+              </select></div>
+        </div>
+        <br>
+        
+   <br><br>
+   <button type="submit" class="btn btn-primary">REGISTER</button>
+       
+<div>
+    {%for message in messages %}
+    <h3>{{message}}</h3>
+    {%endfor%}
+</div>
+
+       </span>
+</center>
+</form>
+    {% endblock %}
+</body>
+</html>

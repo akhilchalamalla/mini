@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADDevent</title>
+</head>
+<style>
+    .border {
+      display: inline-block;
+      width: 550px;
+      height: 490px;
+      margin: 90px;
+      border-radius: 20px;
+      background-color:cadetblue
+    }
+    .span {
+        background-color:lightcyan;
+      }
+    </style>
+<body>
+    {% extends 'base.html' %}
+    {% block content %}
+    <form action="addevent" method="POST">
+        {% csrf_token %}
+       <center>
+           <span class="border border-dark">
+      <h2>ADD EVENT</h2>
+       <hr>
+       <br><br><br>
+       <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-3 ">name of event:</div>
+        <div class="col-sm-3"><input type="text" placeholder="event name" name="name" class="span"></div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-3 ">last date to apply:</div>
+        <div class="col-sm-3"><input type="date" placeholder="" name="lastdate" class="span"></div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-3 ">date of event:</div>
+        <div class="col-sm-3"><input type="date" placeholder="" name="eventdate" class="span"></div>
+    </div>
+    <br>
+    <br>
+    <button type="submit" class="btn btn-primary">ADDEVENT</button>
+    <div>
+        {%for message in messages %}
+        <h3>{{message}}</h3>
+        {%endfor%}
+    </div>
+        </span>
+        
+    </center>
+        </form>
+
+
+
+
+    {%endblock%}
+</body>
+</html>

@@ -1,0 +1,45 @@
+<style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+      margin:41px;
+    }
+    td{
+      font-size:larger;
+      padding-left: 57px;
+    }
+    
+  </style>
+  <script >
+function accept()
+{
+    
+}
+</script>
+  {% extends "base.html" %}
+  {% block content %}
+  <h2 style="text-align: center;">welcome{{user.username}}</h2>
+      <h2 style="text-align: center;">PROFILE</h2>
+  <table style="width:80%">
+    <tr>
+        <th>rollno</th>
+        <th>eventname</th>
+        <th>grade</th>
+        <th>year</th>
+        <th>section</th>
+        <th>branch</th>
+    </tr>
+  <marquee>click on rollno to accept (or) decline request</h1>
+  {% for event in events %}
+      <tr id="a"   >
+          <td><a href="{% url 'reqdetail' event.id %}">{{event.rollno}}</a></td>
+          <td>{{event.event}}</td>
+          <td>{{event.grade}}</td>
+          <td>{{event.year}}</td>
+          <td>{{event.section}}</td>
+          <td>{{event.branch}}</td>
+      </tr>
+    {% endfor %}
+   
+</table>
+  {% endblock content %}

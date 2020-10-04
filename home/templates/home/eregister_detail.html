@@ -1,0 +1,23 @@
+<style>
+  .media{
+    width: 347px;
+    height: 162px;
+    margin: 24px;
+    border-radius: 24px;
+    background-color:cornsilk;
+  }
+</style>
+
+{% extends "base.html" %}
+{% block content %}
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+             <h2 >{{ object.rollno }}</h2>
+            </div>
+            <td ><a href="{%url 'accept'  object.id %}" style="color:rgb(76, 240, 11)">accept</a></td>
+            &nbsp;&nbsp;<td ><a href="{%url 'reject'  object.id %}" style="color:red" >reject</a></td>
+          </div>
+        </article>
+        <a href="{%url 'reqevents' %}"><input type="button"  value="Requeted events"></input></a>
+{% endblock content %}

@@ -1,0 +1,45 @@
+<style>
+  table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin:41px;
+  }
+  td{
+    font-size:larger;
+    padding-left: 57px;
+  }
+</style>
+
+
+{% extends "base.html" %}
+{% block content %}
+    <h2 style="text-align: center;">welcome{{register.name}}</h2>
+    <h2 style="text-align: center;">PROFILE</h2>
+    
+    <table style="width:80%">
+      <tr>
+        <td style="color: blue;"><b>Name</b></td>
+        <td style="font-style: oblique;">{{ register.name }}</td>
+      </tr>
+      <tr>
+        <td style="color: blue;"><b>Mail</b></td>
+        <td style="font-style:italic;">{{ user.email }}</td>
+      </tr>
+      <tr>
+        <td style="color: blue;"><b>Rollno</b></td>
+        <td style="font-style:italic;">{{ register.rollno }}</td>
+      </tr>
+      <tr>
+        <td style="color: blue;"><b>Year</b></td>
+        <td style="font-style:italic;">{{ register.year }}</td>
+      </tr>
+      <tr>
+        <td style="color: blue;"><b>branch</b></td>
+        <td style="font-style:italic;">{{ register.branch }}</td>
+      </tr>
+      <tr>
+        <td style="color: blue;"><b>section</b></td>
+        <td style="font-style:italic;">{{ register.section }}</td>
+      </tr>
+      </table>
+{% endblock content %}

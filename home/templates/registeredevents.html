@@ -1,0 +1,35 @@
+<style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+      margin:41px;
+    }
+    td{
+      font-size:larger;
+      padding-left: 57px;
+    }
+  </style>
+  
+  
+  {% extends "base.html" %}
+  {% block content %}
+  <h2 style="text-align: center;">welcome{{user.username}}</h2>
+      <h2 style="text-align: center;">EVENTS</h2>
+  <table style="width:80%">
+    <tr>
+        <th>rollno</th>
+        <th>event name</th>
+        <th>status</th>
+    </tr>
+  
+  {% for event in events %}
+  {% if user.username == event.rollno %}
+      <tr>
+          <td>{{event.rollno}}</td>
+          <td>{{event.eventname}}</td>
+          <td>{{event.status}}</td>
+      </tr>
+    {% endif %}
+    {% endfor %}
+</table>
+  {% endblock content %}
